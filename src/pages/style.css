@@ -1,0 +1,74 @@
+/* Importación de fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Estilos generales para el body */
+body {
+    font-family: 'Inter', sans-serif; /* Establece la fuente para todo el documento */
+    background-image: url(https://images4.alphacoders.com/100/thumb-1920-1008904.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* Oculta el desbordamiento para mantener las estrellas dentro del body */
+}
+
+/* Media query para pantallas de hasta 768px de ancho (tablets y móviles) */
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* Ajusta el tamaño de la imagen para que se ajuste dentro del contenedor */
+    }
+}
+
+/* Media query para pantallas de hasta 480px de ancho (móviles pequeños) */
+@media (max-width: 480px) {
+    body {
+        background-size: 100% auto; /* Ajusta el ancho de la imagen al 100% y la altura automáticamente */
+        background-position: top center; /* Posiciona la imagen en la parte superior central */
+    }
+}
+
+/* Estilos para los radio buttons y labels */
+
+
+
+/* Estilos para las estrellas animadas */
+@keyframes sparkle {
+    50% {
+        opacity: 0.8;
+        transform: scale(0.5);
+        box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.36); /* Transparent white */
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0px 0px 10px 5px white;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+        box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.36); /* Transparent white */
+    }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle 2s infinite alternate;
+}
+
+/* Estilos para el contenedor de las estrellas */
+.sparkling-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca el contenedor detrás de otros elementos */
+}
